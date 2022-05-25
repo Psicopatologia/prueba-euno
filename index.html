@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>euno</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+</head>
+
+<body class="page" onload="loadSound();">
+    <section class="productsContainer">
+        <h1 class="productsContainer__title">Lista productos</h1>
+        <p class="productsContainer__count"></p>
+        <button id="openAddModalButton" class="btn btn--primary productsContainer__addButton">
+            Agregar producto
+        </button>
+        <ul class="productListContainer">
+        </ul>
+    </section>
+    <div class="modalContainer" id="addModal">
+        <form id="addForm" class="modalContainer__form">
+            <label for="code" class="modalContainer__form__label">
+                Código
+            </label>
+            <input type="text" name="code" class="modalContainer__form__input">
+            <label for="name" class="modalContainer__form__label">
+                Nombre
+            </label>
+            <input type="text" name="name" class="modalContainer__form__input">
+            <label for="color" class="modalContainer__form__label">
+                Color
+            </label>
+            <input type="text" name="color" class="modalContainer__form__input">
+            <label for="weight" class="modalContainer__form__label">
+                Peso (kg)
+            </label>
+            <input step="0.1" type="number" name="weight" class="modalContainer__form__input">
+            <label for="weight" class="modalContainer__form__label">
+                Cantidad
+            </label>
+            <input type="number" name="stock" class="modalContainer__form__input">
+            <label for="img" class="modalContainer__form__label">
+                Foto
+            </label>
+            <input name="img" class="modalContainer__form__input" type="file" accept="image/png, image/jpeg">
+            <div class="buttonGroup">
+                <a id="closeAddModalButton" class="btn btn--secondary modalContainer__form__button">Cancelar</a>
+                <button class="btn btn--primary modalContainer__form__button" type="submit">Agregar</button>
+            </div>
+        </form>
+    </div>
+    <div class="modalContainer" id="updateModal">
+        <form id="updateForm" class="modalContainer__form">
+            <p id="updateFormTitle"></p>
+            <label for="name" class="modalContainer__form__label">
+                Nombre
+            </label>
+            <input required id="nameUpdate" type="text" name="name" class="modalContainer__form__input">
+            <label for="color" class="modalContainer__form__label">
+                Color
+            </label>
+            <input required id="colorUpdate" type="text" name="color" class="modalContainer__form__input">
+            <label for="weight" class="modalContainer__form__label">
+                Peso (kg)
+            </label>
+            <input required id="weightUpdate" step="0.1" type="number" name="weight"
+                class="modalContainer__form__input">
+            <label for="weight" class="modalContainer__form__label">
+                Cantidad
+            </label>
+            <input required id="stockUpdate" type="number" name="stock" class="modalContainer__form__input">
+            <div class="buttonGroup">
+                <a id="closeUpdateModalButton" class="btn btn--secondary modalContainer__form__button">Cancelar</a>
+                <button class="btn btn--primary modalContainer__form__button" type="submit">Actualizar</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
